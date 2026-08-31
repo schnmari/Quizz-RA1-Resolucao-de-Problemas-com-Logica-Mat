@@ -251,6 +251,69 @@ const QUESTIONS = {
       correct: 1,
       explain: "Parênteses sempre são resolvidos primeiro, assim como em expressões matemáticas comuns."
     }
+  ],
+
+  5: [
+    {
+      q: "Uma fórmula em forma normal (FND ou FNC) pode conter, no máximo, quais conectivos?",
+      options: ["→ e ↔", "¬, ∨ e ∧", "Apenas ∨ e ∧", "¬, → e ↔"],
+      correct: 1,
+      explain: "As formas normais usam só ¬, ∨ e ∧. Condicional e bicondicional precisam ser eliminados por equivalências antes."
+    },
+    {
+      q: "A Forma Normal Conjuntiva (FNC) é:",
+      options: ["Uma disjunção de conjunções: ( ∧ ) ∨ ( ∧ )", "Uma conjunção de disjunções: ( ∨ ) ∧ ( ∨ )", "Qualquer fórmula sem parênteses", "Uma fórmula que só usa negações"],
+      correct: 1,
+      explain: "FNC = ConjuntivA por fora: blocos de \"ou\" ligados por \"e\", no formato ( ∨ ) ∧ ( ∨ )."
+    },
+    {
+      q: "A Forma Normal Disjuntiva (FND) é:",
+      options: ["Uma disjunção de conjunções: ( ∧ ) ∨ ( ∧ )", "Uma conjunção de disjunções: ( ∨ ) ∧ ( ∨ )", "Uma fórmula sem nenhuma negação", "Uma fórmula que contém → ou ↔"],
+      correct: 0,
+      explain: "FND = DisjuntivA por fora: blocos de \"e\" ligados por \"ou\", no formato ( ∧ ) ∨ ( ∧ )."
+    },
+    {
+      q: "Ao converter uma fórmula para forma normal, qual costuma ser o primeiro passo?",
+      options: ["Distribuir ∧ sobre ∨", "Montar a tabela-verdade", "Eliminar → e ↔ usando as equivalências", "Remover todos os parênteses"],
+      correct: 2,
+      explain: "Como as formas normais só admitem ¬, ∨ e ∧, o primeiro passo é trocar → e ↔ por suas equivalências (A → B ≡ ¬A ∨ B)."
+    },
+    {
+      q: "Pela equivalência da condicional, p → q é equivalente a:",
+      options: ["p ∧ q", "¬p ∨ q", "¬p ∧ ¬q", "p ∨ ¬q"],
+      correct: 1,
+      explain: "A → B ≡ ¬A ∨ B. Essa equivalência já entrega a FND (e a FNC) de p → q: ¬p ∨ q."
+    },
+    {
+      q: "Pela lei de De Morgan, ¬(p ∧ q) é equivalente a:",
+      options: ["¬p ∧ ¬q", "¬p ∨ ¬q", "p ∨ q", "¬(p ∨ q)"],
+      correct: 1,
+      explain: "De Morgan troca o conectivo e nega cada parte: ¬(A ∧ B) ≡ ¬A ∨ ¬B."
+    },
+    {
+      q: "Qual é a forma normal de ¬(p ∨ q)?",
+      options: ["¬p ∨ ¬q", "p ∧ q", "¬p ∧ ¬q", "¬p → ¬q"],
+      correct: 2,
+      explain: "Por De Morgan, ¬(p ∨ q) ≡ ¬p ∧ ¬q — a negação não pode ficar sobre o ∨, então ela é \"empurrada para dentro\"."
+    },
+    {
+      q: "Qual das fórmulas abaixo já está em FNC?",
+      options: ["(p ∨ q) ∧ (r ∨ ¬s)", "(p ∧ q) ∨ r", "¬(p ∨ q)", "p → q"],
+      correct: 0,
+      explain: "É uma conjunção de disjunções, com negação só sobre proposição simples. (p ∧ q) ∨ r é FND; as outras duas ainda têm ¬ sobre ∨ ou o conectivo →."
+    },
+    {
+      q: "Qual é a FND de p ∧ (q ∨ r)?",
+      options: ["(p ∨ q) ∧ (p ∨ r)", "(p ∧ q) ∨ (p ∧ r)", "p ∨ (q ∧ r)", "¬p ∨ q ∨ r"],
+      correct: 1,
+      explain: "Distribuindo ∧ sobre ∨: A ∧ (B ∨ C) ≡ (A ∧ B) ∨ (A ∧ C). O resultado é uma disjunção de conjunções."
+    },
+    {
+      q: "Qual é a FNC de ¬p ∨ (q ∧ ¬r)?",
+      options: ["(¬p ∧ q) ∨ (¬p ∧ ¬r)", "¬p ∧ q ∧ ¬r", "(¬p ∨ q) ∧ (¬p ∨ ¬r)", "(p ∨ q) ∧ (p ∨ r)"],
+      correct: 2,
+      explain: "Distribuindo ∨ sobre ∧: A ∨ (B ∧ C) ≡ (A ∨ B) ∧ (A ∨ C). O resultado é uma conjunção de disjunções."
+    }
   ]
 };
 
