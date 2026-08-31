@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V ou F — Guia de Lógica Proposicional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ===================== HOME ===================== -->
+<section class="home" id="home">
+  <header class="site-header">
+    <div class="wrap">
+      <h1>Lógica Proposicional</h1>
+      <p class="mono-label">Guia de estudo — Prova de Resolução de Problemas com Lógica Matemática ( ੭ ･ᴗ･ )੭</p>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="overall-card">
+      <p class="mono-label">// Progresso geral</p>
+      <p class="overall-score"><span id="overallCorrect">0</span><span class="of"> / 40</span></p>
+      <div class="bar"><div class="bar-fill" id="overallFill"></div></div>
+      <p class="overall-sub" id="overallSub">Questões corretas no total (0%) — 0 respondidas</p>
+    </div>
+
+    <p class="mono-label section-label">// Escolha um conteúdo!</p>
+
+    <div class="card-grid">
+      <article class="content-card" data-card="1">
+        <p class="dir-line"><span class="dir-tag">[dir]</span> <span class="dir-path">Proposicoes/</span></p>
+        <h2>Proposições Lógicas</h2>
+        <p class="card-desc">// sentença declarativa com exatamente um valor lógico — V ou F</p>
+        <p class="card-count">10 questões</p>
+        <div class="bar"><div class="bar-fill" data-fill></div></div>
+        <p class="card-score" data-score>0 / 10 corretas</p>
+        <button class="study-btn" type="button" data-open="1">Estudar →</button>
+      </article>
+
+      <article class="content-card" data-card="2">
+        <p class="dir-line"><span class="dir-tag">[dir]</span> <span class="dir-path">conectivos/</span></p>
+        <h2>Conectivos Lógicos</h2>
+        <p class="card-desc">// ¬ ∧ ∨ → ↔ — como combinar proposições e a precedência entre elas</p>
+        <p class="card-count">10 questões</p>
+        <div class="bar"><div class="bar-fill" data-fill></div></div>
+        <p class="card-score" data-score>0 / 10 corretas</p>
+        <button class="study-btn" type="button" data-open="2">Estudar →</button>
+      </article>
+
+      <article class="content-card" data-card="3">
+        <p class="dir-line"><span class="dir-tag">[dir]</span> <span class="dir-path">linguagem-natural/</span></p>
+        <h2>Linguagem Natural ↔ Lógica</h2>
+        <p class="card-desc">// da frase em português para a expressão lógica — e de volta</p>
+        <p class="card-count">10 questões</p>
+        <div class="bar"><div class="bar-fill" data-fill></div></div>
+        <p class="card-score" data-score>0 / 10 corretas</p>
+        <button class="study-btn" type="button" data-open="3">Estudar →</button>
+      </article>
+
+      <article class="content-card" data-card="4">
+        <p class="dir-line"><span class="dir-tag">[dir]</span> <span class="dir-path">tabela-verdade/</span></p>
+        <h2>Tabela-Verdade</h2>
+        <p class="card-desc">// todas as combinações de V/F — tautologia, contradição e contingência</p>
+        <p class="card-count">10 questões</p>
+        <div class="bar"><div class="bar-fill" data-fill></div></div>
+        <p class="card-score" data-score>0 / 10 corretas</p>
+        <button class="study-btn" type="button" data-open="4">Estudar →</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MÓDULOS ===================== -->
+<main class="wrap">
+
+  <!-- MÓDULO 1 -->
+  <section class="module" id="modulo-1" data-module="1" hidden>
+    <button class="back-btn" type="button" data-back>← voltar aos conteúdos</button>
+    <p class="dir-line"><span class="dir-tag">[dir]</span> <span class="dir-path">proposicoes/</span></p>
+    <h2 class="module-title">proposições lógicas</h2>
+
+    <div class="explanation">
+      <p>Uma <strong>proposição</strong> é toda sentença declarativa que pode receber exatamente um valor lógico — verdadeiro (<span class="vf true-tag">V</span>) ou falso (<span class="vf false-tag">F</span>) — nunca os dois ao mesmo tempo, e nunca nenhum dos dois.</p>
+
+      <div class="example-block">
+        <p class="example-label">// são proposições</p>
+        <ul>
+          <li><span class="logic">"2 + 2 = 4"</span> — <span class="vf true-tag">V</span></li>
+          <li><span class="logic">"O Sol gira em torno da Terra"</span> — <span class="vf false-tag">F</span></li>
+          <li><span class="logic">"Curitiba fica no Paraná"</span> — <span class="vf true-tag">V</span></li>
+        </ul>
+      </div>
+
+      <div class="example-block">
+        <p class="example-label">// não são proposições</p>
+        <ul>
+          <li>Perguntas — <span class="logic">"Que horas são?"</span></li>
+          <li>Ordens e exclamações — <span class="logic">"Feche a porta!"</span></li>
+          <li>Sentenças abertas, com variável sem valor definido — <span class="logic">"x + 3 = 10"</span></li>
+          <li>Opiniões sem critério objetivo de verdade — <span class="logic">"Esse filme é ótimo"</span></li>
+        </ul>
+      </div>
+
+      <p><strong>Proposições simples</strong> (ou atômicas) não usam conectivos e recebem uma letra minúscula: <span class="logic">p, q, r, s...</span> <strong>Proposições compostas</strong> (ou moleculares) juntam duas ou mais proposições simples por meio de conectivos lógicos (que você vê no módulo <span class="logic">conectivos/</span>).</p>
+    </div>
+
+    <div class="quiz" data-quiz-module="1">
+      <div class="quiz-head">
+        <h3>// pratique — 10 questões</h3>
+        <p class="quiz-status" data-status></p>
+      </div>
+      <div class="quiz-body" data-quiz-body></div>
+    </div>
+  </section>
+
+  <!-- MÓDULO 2 -->
+  <section class="module" id="modulo-2" data-module="2" hidden>
+    <button class="back-btn" type="button" data-back>← voltar aos conteúdos</button>
+    <p class="dir-line"><span class="dir-tag">[dir]</span> <span class="dir-path">conectivos/</span></p>
+    <h2 class="module-title">Expressões e Conectivos Lógicos</h2>
+
+    <div class="explanation">
+      <p>Os <strong>conectivos</strong> combinam proposições simples em proposições compostas. Cada um tem uma condição exata para ser verdadeiro.</p>
+
+      <div class="connective-table">
+        <div class="conn-row conn-row-header">
+          <span>Nome</span><span>Símbolo</span><span>Lê-se</span><span>É verdadeira quando...</span>
+        </div>
+        <div class="conn-row">
+          <span>Negação</span><span class="logic">¬p</span><span>"não p"</span><span>inverte o valor de p</span>
+        </div>
+        <div class="conn-row">
+          <span>Conjunção</span><span class="logic">p ∧ q</span><span>"p e q"</span><span>p e q são ambas V</span>
+        </div>
+        <div class="conn-row">
+          <span>Disjunção</span><span class="logic">p ∨ q</span><span>"p ou q"</span><span>pelo menos uma é V</span>
+        </div>
+        <div class="conn-row">
+          <span>Condicional</span><span class="logic">p → q</span><span>"se p, então q"</span><span>só é F quando p=V e q=F</span>
+        </div>
+        <div class="conn-row">
+          <span>Bicondicional</span><span class="logic">p ↔ q</span><span>"p se, e somente se, q"</span><span>p e q têm o mesmo valor</span>
+        </div>
+      </div>
+
+      <p><strong>Ordem de precedência</strong> (do mais forte para o mais fraco): <span class="logic">¬ , ∧ , ∨ , → , ↔</span>. Parênteses são sempre resolvidos primeiro. Por isso <span class="logic">¬p ∨ q</span> significa <span class="logic">(¬p) ∨ q</span>, e não <span class="logic">¬(p ∨ q)</span>.</p>
+    </div>
+
+    <div class="quiz" data-quiz-module="2">
+      <div class="quiz-head">
+        <h3>// pratique — 10 questões</h3>
+        <p class="quiz-status" data-status></p>
+      </div>
+      <div class="quiz-body" data-quiz-body></div>
+    </div>
+  </section>
+
+  <!-- MÓDULO 3 -->
+  <section class="module" id="modulo-3" data-module="3" hidden>
+    <button class="back-btn" type="button" data-back>← voltar aos conteúdos</button>
+    <p class="dir-line"><span class="dir-tag">[dir]</span> <span class="dir-path">linguagem-natural/</span></p>
+    <h2 class="module-title">Linguagem Natural ↔ Proposições Lógicas</h2>
+
+    <div class="explanation">
+      <p>Traduzir uma frase para lógica tem duas etapas: <strong>(1)</strong> identificar as proposições simples e dar uma letra para cada uma, e <strong>(2)</strong> identificar os conectivos escondidos nas palavras da frase.</p>
+
+      <div class="example-block">
+        <p class="example-label">// palavras-chave mais comuns</p>
+        <ul>
+          <li><span class="logic">"e", "mas", "porém"</span> → <span class="logic">∧</span></li>
+          <li><span class="logic">"ou"</span> → <span class="logic">∨</span></li>
+          <li><span class="logic">"não", "não é verdade que"</span> → <span class="logic">¬</span></li>
+          <li><span class="logic">"se ..., então ..."</span> → <span class="logic">→</span></li>
+          <li><span class="logic">"... se, e somente se, ..."</span> → <span class="logic">↔</span></li>
+        </ul>
+      </div>
+
+      <div class="example-block">
+        <p class="example-label">// exemplo</p>
+        <p>"Se chover, então levarei o guarda-chuva."<br>
+        <span class="logic">p</span>: "Chove." &nbsp;|&nbsp; <span class="logic">q</span>: "Levarei o guarda-chuva."<br>
+        Tradução: <span class="logic">p → q</span></p>
+      </div>
+
+      <p>Para traduzir no sentido contrário — da lógica para a linguagem natural — basta substituir cada letra pelo significado da proposição e reescrever o conectivo por extenso. Preste atenção nas negações: em português, o "não" pode vir antes ou depois da proposição na frase.</p>
+    </div>
+
+    <div class="quiz" data-quiz-module="3">
+      <div class="quiz-head">
+        <h3>// pratique — 10 questões</h3>
+        <p class="quiz-status" data-status></p>
+      </div>
+      <div class="quiz-body" data-quiz-body></div>
+    </div>
+  </section>
+
+  <!-- MÓDULO 4 -->
+  <section class="module" id="modulo-4" data-module="4" hidden>
+    <button class="back-btn" type="button" data-back>← voltar aos conteúdos</button>
+    <p class="dir-line"><span class="dir-tag">[dir]</span> <span class="dir-path">tabela-verdade/</span></p>
+    <h2 class="module-title">Tabela-Verdade</h2>
+
+    <div class="explanation">
+      <p>A <strong>tabela-verdade</strong> mostra o valor lógico de uma proposição composta para todas as combinações possíveis de valores das proposições simples que a formam.</p>
+
+      <p><strong>Número de linhas:</strong> se a proposição tem <span class="logic">n</span> proposições simples diferentes, a tabela tem <span class="logic">2ⁿ</span> linhas.</p>
+
+      <div class="example-block">
+        <table class="truth-table">
+          <thead><tr><th>p</th><th>q</th><th>p ∧ q</th><th>p ∨ q</th></tr></thead>
+          <tbody>
+            <tr><td>V</td><td>V</td><td class="true-tag">V</td><td class="true-tag">V</td></tr>
+            <tr><td>V</td><td>F</td><td class="false-tag">F</td><td class="true-tag">V</td></tr>
+            <tr><td>F</td><td>V</td><td class="false-tag">F</td><td class="true-tag">V</td></tr>
+            <tr><td>F</td><td>F</td><td class="false-tag">F</td><td class="false-tag">F</td></tr>
+          </tbody>
+        </table>
+        <p class="example-label" style="margin-top:.75rem">// com 2 proposições simples, sempre 4 linhas (2²)</p>
+      </div>
+
+      <p><strong>Como montar:</strong> liste todas as combinações de V/F das proposições simples, depois calcule os conectivos de maior precedência primeiro, coluna por coluna, até chegar no resultado final.</p>
+
+      <div class="example-block">
+        <p class="example-label">// classificação pelo resultado final</p>
+        <ul>
+          <li><strong>Tautologia</strong> — resultado é <span class="vf true-tag">V</span> em todas as linhas</li>
+          <li><strong>Contradição</strong> — resultado é <span class="vf false-tag">F</span> em todas as linhas</li>
+          <li><strong>Contingência</strong> — o resultado tem pelo menos um V e um F entre as linhas</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="quiz" data-quiz-module="4">
+      <div class="quiz-head">
+        <h3>// pratique — 10 questões</h3>
+        <p class="quiz-status" data-status></p>
+      </div>
+      <div class="quiz-body" data-quiz-body></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>O progresso fica salvo neste navegador (localStorage). <button class="link-btn" type="button" id="resetAll">Zerar tudo</button></p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
