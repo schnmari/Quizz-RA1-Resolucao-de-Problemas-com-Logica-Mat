@@ -5,4 +5,5 @@ O site reúne quatro módulos:
 - Conectivos
 - Tradução entre linguagem natural e proposições
 - Tabelas-verdade
+  
 Cada um com uma explicação direta ao ponto seguida de um quiz de 10 questões com feedback imediato \(^o^)/
